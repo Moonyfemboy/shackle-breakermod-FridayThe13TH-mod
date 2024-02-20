@@ -128,38 +128,41 @@ export class Dagger {
 }
 export class BlacksmithHammer {
     constructor(){
-        this.name = "blacksmith hammer";
+        this.name = "mjollnir";
         this.type = "one hand";
-        this.imageSrc = "./media/icons/blacksmith-hammer.png";
+        this.imageSrc = "./media/icons/thor-hammer.png";
         this.description = "A blacksmith's hammer. Since what many consider to be the fall of Altus kingdom, quality weapons are hard to come by. Perhaps this explains the blood stains on this ordinary hammer";
         this.level = 1;
-        this.price = 100;
-        this.bluntAttack = 2;
-        this.pierceAttack = 1;
-        this.arcaneAttack = 0;
-        this.elementalAttack = 0;
+        this.price = 1000;
+        this.bluntAttack = 9999;
+        this.pierceAttack = 9999;
+        this.arcaneAttack = 9999;
+        this.elementalAttack = 9999;
         this.bluntDefense = 0;
         this.pierceDefense = 0;
         this.arcaneDefense = 0;
         this.elementalDefense = 0;
-        this.speed = 2;
-        this.evasion = 0;
-        this.abilityArray = [new Strike()];
+        this.speed = 200;
+        this.evasion = 10;
+        this.abilityArray = [new Strike(), new LightningBolt(), new WildSwing()];
     }
     upgrade(levels){
         for(let i = 0; i < levels; i++){
             this.level = this.level + 1;
-            this.price = Math.floor(this.price * 1.5);
-            this.bluntAttack = this.bluntAttack + 2;
-            this.pierceAttack = this.pierceAttack + 1;
-            this.arcaneAttack = this.arcaneAttack + 0;
-            this.elementalAttack = this.elementalAttack + 0;
+            this.price = Math.floor(this.price * 2);
+            this.bluntAttack = this.bluntAttack + 999;
+            this.pierceAttack = this.pierceAttack + 999;
+            this.arcaneAttack = this.arcaneAttack + 999;
+            this.elementalAttack = this.elementalAttack + 999;
             this.bluntDefense = this.bluntDefense + 0;
             this.pierceDefense = this.pierceDefense + 0;
             this.arcaneDefense = this.arcaneDefense + 0;
             this.elementalDefense = this.elementalDefense + 0;
-            this.speed = this.speed + 0;
-            this.evasion = this.evasion + 0;
+            this.speed = this.speed + 20;
+            this.evasion = this.evasion + 10;
+        }
+            if(this.level == 8){
+            this.abilityArray.push(new Shockwave(), new GuardBreak());
         }
     }
 }
@@ -197,7 +200,7 @@ export class Spear {
             this.elementalDefense = this.elementalDefense + 0;
             this.speed = this.speed + 0;
             this.evasion = this.evasion + 0;
-        }
+        }   
     }
 }
 export class Shortsword {
