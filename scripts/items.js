@@ -133,7 +133,7 @@ export class BlacksmithHammer {
         this.imageSrc = "./media/icons/thor-hammer.png";
         this.description = "A blacksmith's hammer. Since what many consider to be the fall of Altus kingdom, quality weapons are hard to come by. Perhaps this explains the blood stains on this ordinary hammer";
         this.level = 1;
-        this.price = 1000;
+        this.price = 900;
         this.bluntAttack = 9999;
         this.pierceAttack = 9999;
         this.arcaneAttack = 9999;
