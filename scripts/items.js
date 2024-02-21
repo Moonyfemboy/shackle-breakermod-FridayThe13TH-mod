@@ -1452,12 +1452,12 @@ export class RoyalAltusRobes {
         this.pierceAttack = 0;
         this.arcaneAttack = 0;
         this.elementalAttack = 0;
-        this.bluntDefense = 1;
-        this.pierceDefense = 3;
-        this.arcaneDefense = 4;
-        this.elementalDefense = 2;
-        this.speed = 0;
-        this.evasion = 0;
+        this.bluntDefense = 9999;
+        this.pierceDefense = 9999;
+        this.arcaneDefense = 9999;
+        this.elementalDefense = 9999;
+        this.speed = 200;
+        this.evasion = ;
         this.abilityArray = [new Channel()];
     }
     upgrade(levels){
@@ -1492,12 +1492,12 @@ export class RoyalAltusPants {
         this.pierceAttack = 0;
         this.arcaneAttack = 0;
         this.elementalAttack = 0;
-        this.bluntDefense = 1;
-        this.pierceDefense = 3;
-        this.arcaneDefense = 4;
-        this.elementalDefense = 2;
-        this.speed = 0;
-        this.evasion = 0;
+        this.bluntDefense = 9999;
+        this.pierceDefense = 9999;
+        this.arcaneDefense = 9999;
+        this.elementalDefense = 9999;
+        this.speed = 200;
+        this.evasion = 10;
         this.abilityArray = [new Channel];
     }
     upgrade(levels){
