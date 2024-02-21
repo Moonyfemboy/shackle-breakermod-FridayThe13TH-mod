@@ -1457,7 +1457,7 @@ export class RoyalAltusRobes {
         this.arcaneDefense = 9999;
         this.elementalDefense = 9999;
         this.speed = 200;
-        this.evasion = ;
+        this.evasion = 10;
         this.abilityArray = [new Channel()];
     }
     upgrade(levels){
