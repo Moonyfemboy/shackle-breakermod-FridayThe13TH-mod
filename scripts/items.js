@@ -53,7 +53,7 @@ export class LinenPants {
     constructor(){
         this.name = "linen pants";
         this.type = "legs";
-        this.imageSrc = "./media/icons/trousers.png";
+        this.imageSrc = "./media/icons/underwear-shorts.png";
         this.description = "A heavily worn pair of linen trousers. Standard article of clothing for citizens of the Altus kingdom, or rather, whats left of them.";
         this.level = 1;
         this.price = 50;
