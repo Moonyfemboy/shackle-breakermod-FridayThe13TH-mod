@@ -1441,7 +1441,7 @@ export class NightbladeChestplate {
         }
     }
 }
-export class AltusRobes {
+export class RoyalAltusRobes {
     constructor(){
         this.name = "royal altus robes";
         this.type = "torso";
