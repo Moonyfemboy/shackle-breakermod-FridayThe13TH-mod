@@ -178,7 +178,7 @@ export default class Controller {
                 break;
             case "blacksmith":
                 equippedArray.push(new BlacksmithHammer, "Empty", new IronHelmet, new LeatherChestplate, new LeatherGloves, new LinenPants, new LeatherBoots);
-                this.partyGold = 250;
+                this.partyGold = 500;
                 break;
             case "ranger":
                 equippedArray.push(new Shortbow, "Empty", new LeatherHood, new LinenShirt, "Empty", new LinenPants, new LeatherBoots);
@@ -282,7 +282,7 @@ export default class Controller {
                 backgroundLore = 'After discovery of magic, travelers from all over came to the Altus kingdom. Few ever left.'
                 break;
             case "blacksmith":
-                backgroundLore = 'With the discovery of magic, many lost interest in the wares of smiths. Ironically, smiths faired quite well during the fall of the Altus Kingdom, and in the chaos that followed. '
+                backgroundLore = 'As the smartest person in Altus the Engineer makes many items and consumables. '
                 break;
             case "ranger":
                 backgroundLore = 'Farmers, hunters, and countrymen who went into hiding during the fall of the Altus kingdom often took up the nomadic life of a ranger, some by choice, others by necessity.';
@@ -1308,6 +1308,7 @@ export default class Controller {
                 case "offhand":
                     if(this.party[0].equippedArray[1] == "N/A" || this.party[0].equippedArray[1].type == "bound"){
                         this.printToGameConsole(`${this.partyInventory[inventoryIndex].name} cannot be equipped to ${this.party[0].name} !`);
+                        if(this.party[0].equippedArray[1] == name.PowerRing || this.party[0].equippedArray[1].type == "bound")
                         return
                     }
                     if(this.party[0].equippedArray[1] !== "Empty"){
