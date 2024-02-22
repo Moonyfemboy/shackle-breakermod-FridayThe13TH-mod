@@ -1297,6 +1297,10 @@ export default class Controller {
                         this.printToGameConsole(`${this.partyInventory[inventoryIndex].name} cannot be equipped to ${this.party[0].name} !`);
                         return
                     }
+                    if(this.party[0].equippedArray[1] == name.PowerRing || this.party[0].equippedArray[1].type == "bound"){
+                        this.printToGameConsole(`${this.partyInventory[inventoryIndex].name} cannot be equipped to ${this.party[0].name} !`);
+                        return
+                    }
                     if(this.party[0].equippedArray[0] !== "Empty"){
                         this.partyInventory.push(this.party[0].equippedArray[0]);
                     }
@@ -1308,7 +1312,10 @@ export default class Controller {
                 case "offhand":
                     if(this.party[0].equippedArray[1] == "N/A" || this.party[0].equippedArray[1].type == "bound"){
                         this.printToGameConsole(`${this.partyInventory[inventoryIndex].name} cannot be equipped to ${this.party[0].name} !`);
-                        if(this.party[0].equippedArray[1] == name.PowerRing || this.party[0].equippedArray[1].type == "bound")
+                        return
+                    }
+                    if(this.party[0].equippedArray[1] == name.PowerRing || this.party[0].equippedArray[1].type == "bound"){
+                        this.printToGameConsole(`${this.partyInventory[inventoryIndex].name} cannot be equipped to ${this.party[0].name} !`);
                         return
                     }
                     if(this.party[0].equippedArray[1] !== "Empty"){
