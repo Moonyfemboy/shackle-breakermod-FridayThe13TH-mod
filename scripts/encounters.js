@@ -9,7 +9,7 @@ import {getRandomItem, LinenShirt, LinenPants, Dagger, BlacksmithHammer, Spear, 
     LeatherHood, LeatherGloves, LeatherChestplate, LeatherGreaves, 
     LeatherBoots, KiteShield, IronHelmet, IronGauntlets, IronChainmail, Shortbow, ForestStaff,
     IronGreaves, IronBoots, PanzerianGuantlets, CrystalBall, ClothHood, ClothRobe, HealthPotion, StaminaPotion, MagicPotion, 
-    ThrowingKnife, PoisonedKnife, Meteorite, Antidote, AloeRemedy, Net, SmokeBomb, Hide, Bandage, FrostbiteTonic, ParalysisTonic, PineWood, TigerClaw, DogPaw, HawkTalons
+    ThrowingKnife, PoisonedKnife, Meteorite, Antidote, AloeRemedy, Net, SmokeBomb, Hide, Bandage, FrostbiteTonic, ParalysisTonic, PineWood, TigerClaw, DogPaw, HawkTalons, Katana, PowerRing
     } from "./items.js";
 
 
@@ -102,7 +102,7 @@ export class UnlockedTreasureChest extends Encounter{
                         let lootArray = [];
                         let count = Math.ceil(Math.random()*3);
                         for(let i = 0; i < count; i++){
-                            lootArray.push(getRandomItem())
+                            lootArray.push(getRandomItem(), new Katana)
                         }
                         loot(`${theController.party[0].name} finds the following items`, lootArray, 10, 100)
                     }
