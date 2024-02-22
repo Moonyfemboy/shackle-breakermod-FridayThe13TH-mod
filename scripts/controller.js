@@ -1297,7 +1297,7 @@ export default class Controller {
                         this.printToGameConsole(`${this.partyInventory[inventoryIndex].name} cannot be equipped to ${this.party[0].name} !`);
                         return
                     }
-                    if(this.party[0].equippedArray[1] == name.PowerRing || this.party[0].equippedArray[1].type == "bound"){
+                    if(this.party[0].equippedArray[1] == new PowerRing || this.party[0].equippedArray[1].type == "bound"){
                         this.printToGameConsole(`${this.partyInventory[inventoryIndex].name} cannot be equipped to ${this.party[0].name} !`);
                         return
                     }
@@ -1314,7 +1314,7 @@ export default class Controller {
                         this.printToGameConsole(`${this.partyInventory[inventoryIndex].name} cannot be equipped to ${this.party[0].name} !`);
                         return
                     }
-                    if(this.party[0].equippedArray[1] == name.PowerRing || this.party[0].equippedArray[1].type == "bound"){
+                    if(this.party[0].equippedArray[1] == new PowerRing || this.party[0].equippedArray[1].type == "bound"){
                         this.printToGameConsole(`${this.partyInventory[inventoryIndex].name} cannot be equipped to ${this.party[0].name} !`);
                         return
                     }
