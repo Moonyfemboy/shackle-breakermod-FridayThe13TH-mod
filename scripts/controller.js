@@ -3,7 +3,7 @@ import {LinenShirt, LinenPants, Dagger, BlacksmithHammer, Spear, Shortsword, Lon
     LeatherHood, LeatherGloves, LeatherChestplate, LeatherGreaves, 
     LeatherBoots, KiteShield, IronHelmet, IronGauntlets, IronChainmail, Shortbow, ForestStaff,
     IronGreaves, IronBoots, PanzerianGuantlets, CrystalBall, ClothHood, ClothRobe, HealthPotion, StaminaPotion, MagicPotion, 
-    ThrowingKnife, PoisonedKnife, Meteorite, Antidote, AloeRemedy, Net, SmokeBomb, Hide, Bandage, FrostbiteTonic, ParalysisTonic, PineWood, TigerClaw, DogPaw, HawkTalons, RoyalAltusRobes, RoyalAltusPants
+    ThrowingKnife, PoisonedKnife, Meteorite, Antidote, AloeRemedy, Net, SmokeBomb, Hide, Bandage, FrostbiteTonic, ParalysisTonic, PineWood, TigerClaw, DogPaw, HawkTalons, RoyalAltusRobes, RoyalAltusPants, PowerRing, Katana
     } from "./items.js";
 import {Recover, Punch, Retreat, Dodge} from "./abilities.js"
 import Character from "./character.js";
@@ -177,7 +177,7 @@ export default class Controller {
                 this.partyGold = 350;
                 break;
             case "blacksmith":
-                equippedArray.push(new BlacksmithHammer, "Empty", new IronHelmet, new RoyalAltusRobes, "Empty", new RoyalAltusPants, new LeatherBoots);
+                equippedArray.push(new BlacksmithHammer, "Empty", new IronHelmet, new LeatherChestplate, new LeatherGloves, new LinenPants, new LeatherBoots);
                 this.partyGold = 250;
                 break;
             case "ranger":
