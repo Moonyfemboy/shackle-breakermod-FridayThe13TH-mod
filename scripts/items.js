@@ -9,7 +9,7 @@ export function getRandomItem(){
                 new LeatherBoots, new KiteShield, new IronHelmet, new IronGauntlets, new IronChainmail, 
                 new IronGreaves, new IronBoots, new PanzerianGuantlets, new CrystalBall, new ClothHood, new ClothRobe, new Shortbow, new ForestStaff,
                 new HealthPotion, new StaminaPotion, new MagicPotion, 
-                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic];
+                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic, new PowerRing, new Katana];
                 return itemArray[Math.floor(Math.random() * itemArray.length)];
     }
 export class LinenShirt {
@@ -128,41 +128,41 @@ export class Dagger {
 }
 export class BlacksmithHammer {
     constructor(){
-        this.name = "mjollnir";
+        this.name = "wrench";
         this.type = "one hand";
-        this.imageSrc = "./media/icons/thor-hammer.png";
+        this.imageSrc = "./media/icons/spanner.png";
         this.description = "A blacksmith's hammer. Since what many consider to be the fall of Altus kingdom, quality weapons are hard to come by. Perhaps this explains the blood stains on this ordinary hammer";
         this.level = 1;
-        this.price = 900;
-        this.bluntAttack = 9999;
-        this.pierceAttack = 9999;
-        this.arcaneAttack = 9999;
-        this.elementalAttack = 9999;
+        this.price = 100;
+        this.bluntAttack = 10;
+        this.pierceAttack = 0;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 0;
         this.bluntDefense = 0;
         this.pierceDefense = 0;
         this.arcaneDefense = 0;
         this.elementalDefense = 0;
-        this.speed = 200;
-        this.evasion = 10;
-        this.abilityArray = [new Strike(), new LightningBolt(), new WildSwing()];
+        this.speed = 1;
+        this.evasion = 2;
+        this.abilityArray = [new Strike()];
     }
     upgrade(levels){
         for(let i = 0; i < levels; i++){
             this.level = this.level + 1;
-            this.price = Math.floor(this.price * 2);
-            this.bluntAttack = this.bluntAttack + 999;
-            this.pierceAttack = this.pierceAttack + 999;
-            this.arcaneAttack = this.arcaneAttack + 999;
-            this.elementalAttack = this.elementalAttack + 999;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack + 2;
+            this.pierceAttack = this.pierceAttack + 0;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 0;
             this.bluntDefense = this.bluntDefense + 0;
             this.pierceDefense = this.pierceDefense + 0;
             this.arcaneDefense = this.arcaneDefense + 0;
             this.elementalDefense = this.elementalDefense + 0;
-            this.speed = this.speed + 20;
-            this.evasion = this.evasion + 10;
+            this.speed = this.speed + 2;
+            this.evasion = this.evasion + 1;
         }
-            if(this.level == 8){
-            this.abilityArray.push(new Shockwave(), new GuardBreak());
+            if(this.level == 4){
+            this.abilityArray.push(new GuardBreak());
         }
     }
 }
@@ -243,6 +243,48 @@ export class Shortsword {
         }
     }
 }
+
+export class Katana {
+    constructor(){
+        this.name = "katana";
+        this.type = "one hand";
+        this.imageSrc = "./media/icons/katana.png";
+        this.description = `A long japanese katana. That is all" - Commander Mentoras.`;
+        this.level = 1;
+        this.price = 200;
+        this.bluntAttack = 0;
+        this.pierceAttack = 6;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 0;
+        this.bluntDefense = 0;
+        this.pierceDefense = 0;
+        this.arcaneDefense = 0;
+        this.elementalDefense = 0;
+        this.speed = 2;
+        this.evasion = 0;
+        this.abilityArray = [new Stab(), new Slash()];
+    }
+    upgrade(levels){
+        for(let i = 0; i < levels; i++){
+            this.level = this.level + 1;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack - 1;
+            this.pierceAttack = this.pierceAttack + 3;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 0;
+            this.bluntDefense = this.bluntDefense + 0;
+            this.pierceDefense = this.pierceDefense + 0;
+            this.arcaneDefense = this.arcaneDefense + 0;
+            this.elementalDefense = this.elementalDefense + 0;
+            this.speed = this.speed + 0;
+            this.evasion = this.evasion + 0;
+        }
+        if(this.level == 3){
+            this.abilityArray.push(new Flurry());
+        }
+    }
+}
+
 export class Handaxe {
     constructor(){
         this.name = "handaxe";
@@ -1560,6 +1602,48 @@ export class PanzerianGuantlets {
         }
     }
 }
+
+export class PowerRing {
+    constructor(){
+        this.name = "ring of light";
+        this.type = "armsBound";
+        this.imageSrc = "./media/icons/power-ring.png";
+        this.description = `a ring inbuned with light that if put on can never be take off.`;
+        this.level = 1;
+        this.price = 200;
+        this.bluntAttack = 0;
+        this.pierceAttack = 0;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 4;
+        this.bluntDefense = 0;
+        this.pierceDefense = 0;
+        this.arcaneDefense = 1;
+        this.elementalDefense = 3;
+        this.speed = 3;
+        this.evasion = 0;
+        this.abilityArray = [new LightBeam];
+    }
+    upgrade(levels){
+        for(let i = 0; i < levels; i++){
+            this.level = this.level + 1;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack + 0;
+            this.pierceAttack = this.pierceAttack + 0;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 2;
+            this.bluntDefense = this.bluntDefense + 0;
+            this.pierceDefense = this.pierceDefense + 0;
+            this.arcaneDefense = this.arcaneDefense + 0;
+            this.elementalDefense = this.elementalDefense + 1;
+            this.speed = this.speed + 1;
+            this.evasion = this.evasion + 0;
+        }
+        if(this.level == 3){
+            this.abilityArray.push(new FlameLash());
+        }
+    }
+}
+
 export class TigerClaw {
     constructor(){
         this.name = "tiger claw";
@@ -1699,10 +1783,10 @@ export class Antidote {
 }
 export class AloeRemedy {
     constructor(){
-        this.name = "aloe remedy";
+        this.name = "fire extinguisher";
         this.type = "consumable";
-        this.imageSrc = "./media/icons/curled-leaf.png";
-        this.description = `a remedy used to treat burns.`;
+        this.imageSrc = "./media/icons/fire-extinguishe.png";
+        this.description = `a fire extinguishe to put out your burrning self.`;
         this.level = 1;
         this.price = 30;
         this.abilityArray = [new UseAloeRemedy()];
