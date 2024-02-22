@@ -102,7 +102,7 @@ export class UnlockedTreasureChest extends Encounter{
                         let lootArray = [];
                         let count = Math.ceil(Math.random()*3);
                         for(let i = 0; i < count; i++){
-                            lootArray.push(getRandomItem(), new Katana)
+                            lootArray.push(getRandomItem(), new PowerRing)
                         }
                         loot(`${theController.party[0].name} finds the following items`, lootArray, 10, 100)
                     }
