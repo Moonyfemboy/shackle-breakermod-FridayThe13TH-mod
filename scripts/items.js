@@ -1606,7 +1606,7 @@ export class PanzerianGuantlets {
 export class PowerRing {
     constructor(){
         this.name = "ring of light";
-        this.type = "bound";
+        this.type = "one hand";
         this.imageSrc = "./media/icons/power-ring.png";
         this.description = `a ring inbuned with light that if put on can never be take off.`;
         this.level = 1;
