@@ -126,7 +126,7 @@ export default class Controller {
                 this.characterCreatorUpdateStats(5, 5, 5, 5, 5, 5);
                 break;
             case "blacksmith":
-                this.characterCreatorUpdateStats(8, 5, 5, 3, 4, 5);
+                this.characterCreatorUpdateStats(7, 3, 3, 3, 5, 5);
                 break;
             case "ranger":
                 this.characterCreatorUpdateStats(5, 8, 5, 5, 3, 4);
