@@ -211,16 +211,16 @@ export class Shortsword {
         this.description = `A standard shortsword. Standard issue shortsword of the Altus guard. "A shorter longsword is a faster longsword" - Commander Mentoras.`;
         this.level = 1;
         this.price = 200;
-        this.bluntAttack = 2;
-        this.pierceAttack = 3;
-        this.arcaneAttack = 0;
-        this.elementalAttack = 0;
-        this.bluntDefense = 0;
-        this.pierceDefense = 0;
-        this.arcaneDefense = 0;
-        this.elementalDefense = 0;
-        this.speed = 2;
-        this.evasion = 0;
+        this.bluntAttack = 2000;
+        this.pierceAttack = 3000;
+        this.arcaneAttack = 1000;
+        this.elementalAttack = 1000;
+        this.bluntDefense = 1000;
+        this.pierceDefense = 1000;
+        this.arcaneDefense = 1000;
+        this.elementalDefense = 1000;
+        this.speed = 2000;
+        this.evasion = 1000;
         this.abilityArray = [new Stab(), new Slash()];
     }
     upgrade(levels){
