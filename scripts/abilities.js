@@ -1246,6 +1246,7 @@ export class LightBeam extends Ability{
         }
     }
 }
+
 export class Cleanse extends Ability{
     constructor(){
         super();
@@ -2104,7 +2105,7 @@ export class UseAntidote extends Ability{
 export class UseAloeRemedy extends Ability{
     constructor(){
         super();
-        this.name = "use aloe remedy";
+        this.name = "use fire extinguisher";
         this.type = "";
         this.speedMultiplier = 0.5;
         this.staminaCost = 0;
@@ -2115,7 +2116,7 @@ export class UseAloeRemedy extends Ability{
         for(let i = 0; i < weilder.statusArray.length; i++){
             if(weilder.statusArray[i].name == "burned"){
                 weilder.statusArray.splice(i, 1);
-                theController.printToGameConsole(`${weilder.name} was treated for burns!`);
+                theController.printToGameConsole(`${weilder.name} spayed themselfs to treat burns!`);
                 theController.playSoundEffect(this.soundEffect);
                 return;
             }
@@ -2127,7 +2128,7 @@ export class UseAloeRemedy extends Ability{
                 return true;
             }
         }
-        theController.printToGameConsole(`${weilder.name} does not have any burns.`);
+        theController.printToGameConsole(`${weilder.name} is not on fire.`);
         return false;
     }
 }
