@@ -1,6 +1,6 @@
 import {Slash, Strike, Stab, Flurry, Eviscerate, Block, Fireball, Meditate, Cleanse, ShieldBash, LightBeam, GuardBreak, DrinkHealthPotion, DrinkStaminaPotion, DrinkMagicPotion, ThrowKnife, ThrowPoisonedKnife, SmashMeteorite, UseAntidote, UseAloeRemedy, UseBandage,
         ThrowNet, Immolate, LightningBolt, Shockwave, Recuperate, IceShard, IceBarrier, DrainLife, Siphon, ArcaneDart, ArcaneBlast, Channel, ThrowSmokebomb, CastShadow, BlinkStrike, Empower, WildSwing, Pounce, Bite, ShootArrow, TripleShot,
-        Roar, UseFrostbiteTonic, UseParalysisTonic, MeteorShower, SummonSkeleton, ArcaneSalvo, Bless, VineLash, ThrowThistles, VortexSheild, ShootPoisonArrow, Curse, FlameLash, BolaShot} from "./abilities.js"
+        Roar, UseFrostbiteTonic, UseParalysisTonic, MeteorShower, SummonSkeleton, ArcaneSalvo, Bless, VineLash, ThrowThistles, VortexSheild, ShootPoisonArrow, Curse, FlameLash, BolaShot, ContinuousSlashing, DragonGust, TrueQuietRush, FocusShot, SwordsDance, TrueAirSlash} from "./abilities.js"
 
 export function getRandomItem(){
     let itemArray = [new LinenShirt, new LinenPants, new Dagger, new BlacksmithHammer, new Spear, new Shortsword, new Longsword, new Handaxe, new NightbladeSword,
@@ -9,7 +9,7 @@ export function getRandomItem(){
                 new LeatherBoots, new KiteShield, new IronHelmet, new IronGauntlets, new IronChainmail, 
                 new IronGreaves, new IronBoots, new PanzerianGuantlets, new CrystalBall, new ClothHood, new ClothRobe, new Shortbow, new ForestStaff,
                 new HealthPotion, new StaminaPotion, new MagicPotion, 
-                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic, new PowerRing, new Katana];
+                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic, new PowerRing, new Katana, new Katana2, new Katana3];
                 return itemArray[Math.floor(Math.random() * itemArray.length)];
     }
 export class LinenShirt {
@@ -249,7 +249,7 @@ export class Katana {
         this.name = "wando";
         this.type = "one hand";
         this.imageSrc = "./media/icons/katana.png";
-        this.description = `A long japanese katana. That is all" - Commander Mentoras.`;
+        this.description = `A legendarie japanese sword that can be used with 2 other swords.`;
         this.level = 1;
         this.price = 200;
         this.bluntAttack = 0;
@@ -262,7 +262,7 @@ export class Katana {
         this.elementalDefense = 0;
         this.speed = 2;
         this.evasion = 0;
-        this.abilityArray = [new Stab(), new Slash()];
+        this.abilityArray = [new ContinuousSlashing(), new Slash()];
     }
     upgrade(levels){
         for(let i = 0; i < levels; i++){
@@ -280,7 +280,88 @@ export class Katana {
             this.evasion = this.evasion + 0;
         }
         if(this.level == 3){
-            this.abilityArray.push(new Flurry());
+            this.abilityArray.push(new  DragonGust());
+        }
+    }
+}
+export class Katana2 {
+    constructor(){
+        this.name = "shisui";
+        this.type = "head";
+        this.imageSrc = "./media/icons/katana.png";
+        this.description = `A legendarie japanese sword that can be held in the mouth?`;
+        this.level = 1;
+        this.price = 200;
+        this.bluntAttack = 0;
+        this.pierceAttack = 6;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 0;
+        this.bluntDefense = 0;
+        this.pierceDefense = 0;
+        this.arcaneDefense = 0;
+        this.elementalDefense = 0;
+        this.speed = 2;
+        this.evasion = 0;
+        this.abilityArray = [new TrueQuietRush(), new Slash()];
+    }
+    upgrade(levels){
+        for(let i = 0; i < levels; i++){
+            this.level = this.level + 1;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack - 1;
+            this.pierceAttack = this.pierceAttack + 3;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 0;
+            this.bluntDefense = this.bluntDefense + 0;
+            this.pierceDefense = this.pierceDefense + 0;
+            this.arcaneDefense = this.arcaneDefense + 0;
+            this.elementalDefense = this.elementalDefense + 0;
+            this.speed = this.speed + 0;
+            this.evasion = this.evasion + 0;
+        }
+        if(this.level == 3){
+            this.abilityArray.push(new FocusShot());
+        }
+    }
+}
+
+export class Katana3 {
+    constructor(){
+        this.name = "saddi";
+        this.type = "one hand";
+        this.imageSrc = "./media/icons/katana.png";
+        this.description = `A legendarie japanese sword that can be used with 2 other swords.`;
+        this.level = 1;
+        this.price = 200;
+        this.bluntAttack = 0;
+        this.pierceAttack = 6;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 0;
+        this.bluntDefense = 0;
+        this.pierceDefense = 0;
+        this.arcaneDefense = 0;
+        this.elementalDefense = 0;
+        this.speed = 2;
+        this.evasion = 0;
+        this.abilityArray = [new  SwordsDance(), new Slash()];
+    }
+    upgrade(levels){
+        for(let i = 0; i < levels; i++){
+            this.level = this.level + 1;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack - 1;
+            this.pierceAttack = this.pierceAttack + 3;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 0;
+            this.bluntDefense = this.bluntDefense + 0;
+            this.pierceDefense = this.pierceDefense + 0;
+            this.arcaneDefense = this.arcaneDefense + 0;
+            this.elementalDefense = this.elementalDefense + 0;
+            this.speed = this.speed + 0;
+            this.evasion = this.evasion + 0;
+        }
+        if(this.level == 3){
+            this.abilityArray.push(new TrueAirSlash());
         }
     }
 }
