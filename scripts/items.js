@@ -246,7 +246,7 @@ export class Shortsword {
 
 export class Katana {
     constructor(){
-        this.name = "katana";
+        this.name = "wando";
         this.type = "one hand";
         this.imageSrc = "./media/icons/katana.png";
         this.description = `A long japanese katana. That is all" - Commander Mentoras.`;
@@ -1606,9 +1606,9 @@ export class PanzerianGuantlets {
 export class PowerRing {
     constructor(){
         this.name = "ring of light";
-        this.type = "one hand";
+        this.type = "arms";
         this.imageSrc = "./media/icons/power-ring.png";
-        this.description = `a ring inbuned with light that if put on can never be take off.`;
+        this.description = `a ring inbuned with light that can help you in battle but, for a price.`;
         this.level = 1;
         this.price = 200;
         this.bluntAttack = 0;
@@ -1618,10 +1618,10 @@ export class PowerRing {
         this.bluntDefense = 0;
         this.pierceDefense = 0;
         this.arcaneDefense = 1;
-        this.elementalDefense = 3;
+        this.elementalDefense = 5;
         this.speed = 3;
         this.evasion = 0;
-        this.abilityArray = [new LightBeam];
+        this.abilityArray = [new Bless, new Cleanse];
     }
     upgrade(levels){
         for(let i = 0; i < levels; i++){
@@ -1637,9 +1637,6 @@ export class PowerRing {
             this.elementalDefense = this.elementalDefense + 1;
             this.speed = this.speed + 1;
             this.evasion = this.evasion + 0;
-        }
-        if(this.level == 3){
-            this.abilityArray.push(new FlameLash());
         }
     }
 }
