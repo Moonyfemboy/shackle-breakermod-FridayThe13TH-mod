@@ -1,6 +1,6 @@
 import {Slash, Strike, Stab, Flurry, Eviscerate, Block, Fireball, Meditate, Cleanse, ShieldBash, LightBeam, GuardBreak, DrinkHealthPotion, DrinkStaminaPotion, DrinkMagicPotion, ThrowKnife, ThrowPoisonedKnife, SmashMeteorite, UseAntidote, UseAloeRemedy, UseBandage,
         ThrowNet, Immolate, LightningBolt, Shockwave, Recuperate, IceShard, IceBarrier, DrainLife, Siphon, ArcaneDart, ArcaneBlast, Channel, ThrowSmokebomb, CastShadow, BlinkStrike, Empower, WildSwing, Pounce, Bite, ShootArrow, TripleShot,
-        Roar, UseFrostbiteTonic, UseParalysisTonic, MeteorShower, SummonSkeleton, ArcaneSalvo, Bless, VineLash, ThrowThistles, VortexSheild, ShootPoisonArrow, Curse, FlameLash, BolaShot, ContinuousSlashing, DragonGust, TrueQuietRush, FocusShot, SwordsDance, TrueAirSlash} from "./abilities.js"
+        Roar, UseFrostbiteTonic, UseParalysisTonic, MeteorShower, SummonSkeleton, ArcaneSalvo, Bless, VineLash, ThrowThistles, VortexSheild, ShootPoisonArrow, Curse, FlameLash, BolaShot, ContinuousSlashing, DragonGust, TrueQuietRush, FocusShot, SwordsDance, TrueAirSlash, RevolvingRavager, SlayerOfGoliath} from "./abilities.js"
 
 export function getRandomItem(){
     let itemArray = [new LinenShirt, new LinenPants, new Dagger, new BlacksmithHammer, new Spear, new Shortsword, new Longsword, new Handaxe, new NightbladeSword,
@@ -384,7 +384,7 @@ export class Katana4 {
         this.elementalDefense = 0;
         this.speed = 5;
         this.evasion = 2;
-        this.abilityArray = [new ContinuousSlashing(), new Slash()];
+        this.abilityArray = [new Slash(), new AirSlash(), new DualSlash()];
     }
     upgrade(levels){
         for(let i = 0; i < levels; i++){
@@ -402,7 +402,7 @@ export class Katana4 {
             this.evasion = this.evasion + 1;
         }
         if(this.level == 3){
-            this.abilityArray.push(new  DragonGust());
+            this.abilityArray.push(new  SlayerOfGoliath(), new RevolvingRavager());
         }
     }
 }
