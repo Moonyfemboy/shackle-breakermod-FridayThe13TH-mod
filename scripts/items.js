@@ -402,7 +402,10 @@ export class Katana4 {
             this.evasion = this.evasion + 1;
         }
         if(this.level == 3){
-            this.abilityArray.push(new  SlayerOfGoliath(), new RevolvingRavager());
+            this.abilityArray.push(new RevolvingRavager());
+        }
+            if(this.level == 5){
+            this.abilityArray.push(new  SlayerOfGoliath());
         }
     }
 }
