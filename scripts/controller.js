@@ -129,7 +129,7 @@ export default class Controller {
                 this.characterCreatorUpdateStats(7, 3, 3, 3, 5, 5);
                 break;
             case "ranger":
-                this.characterCreatorUpdateStats(5, 8, 5, 5, 3, 4);
+                this.characterCreatorUpdateStats(5, 800, 5, 5, 3, 4);
                 break;
             case "scholar":
                 this.characterCreatorUpdateStats(5, 5, 3, 4, 8, 5);
