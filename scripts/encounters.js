@@ -102,7 +102,7 @@ export class UnlockedTreasureChest extends Encounter{
                         let lootArray = [];
                         let count = Math.ceil(Math.random()*3);
                         for(let i = 0; i < count; i++){
-                            lootArray.push(getRandomItem(), new Katana)
+                            lootArray.push(getRandomItem())
                         }
                         loot(`${theController.party[0].name} finds the following items`, lootArray, 10, 100)
                     }
@@ -324,7 +324,7 @@ export class TravelingMerchant extends Encounter{
                                 break;
                             }
                         }
-                        initiateTrade(`${theController.party[0].name} offers to trade`, [new HealthPotion, new Katana, getRandomItem(), getRandomItem(), getRandomItem()], "trade")
+                        initiateTrade(`${theController.party[0].name} offers to trade`, [new HealthPotion, getRandomItem(), getRandomItem(), getRandomItem(), getRandomItem()], "trade")
                     }
                 ],
                 [
@@ -672,7 +672,7 @@ export class UnearthedReamins extends Encounter{
                 ()=>{theController.printToGameConsole(`${theController.party[0].name} reaches for the skeleton.`)},
                 "neutral",
                 [
-                    ()=>{loot(`${theController.party[0].name} finds: `, [getRandomItem(), new Katana], 10, 50)},
+                    ()=>{loot(`${theController.party[0].name} finds: `, [getRandomItem()], 10, 50)},
                 ],
                 [
                     ()=>{toggleBattle(`the skeleton magically animates and walks towards ${theController.party[0].name}!`, [new Skeleton(theController.calculateAveragePartyLevel())], true)},
