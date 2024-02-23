@@ -443,6 +443,224 @@ export class Flurry extends Ability{
         }
     }
 }
+
+
+export class ContinuousSlashing	extends Ability{
+    constructor(){
+        super();
+        this.name = "continuous slashing";
+        this.type = "pierce";
+        this.speedMultiplier = 0.25;
+        this.staminaCost = 30;
+        this.magicCost = 0;
+        this.damageModifier = 16;
+        this.accuracy = 70;
+        this.soundEffect = "./audio/soundEffects/Knife-Stab-A10-www.fesliyanstudios.com.mp3";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((weilder.currentPierceAttack + this.damageModifier) - (weilder.currentPierceAttack + this.damageModifier/2) + 1)) + (weilder.currentPierceAttack + this.damageModifier/2);
+            damageOutput = this.checkDamage(damageOutput, weilder, target, target.currentPierceDefense, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
+
+export class DragonGust extends Ability{
+    constructor(){
+        super();
+        this.name = "dragon gust";
+        this.type = "pierce";
+        this.speedMultiplier = 0.25;
+        this.staminaCost = 35;
+        this.magicCost = 0;
+        this.damageModifier = 16;
+        this.accuracy = 70;
+        this.soundEffect = "./audio/soundEffects/Knife-Stab-A10-www.fesliyanstudios.com.mp3";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((weilder.currentPierceAttack + this.damageModifier) - (weilder.currentPierceAttack + this.damageModifier/2) + 1)) + (weilder.currentPierceAttack + this.damageModifier/2);
+            damageOutput = this.checkDamage(damageOutput, weilder, target, target.currentPierceDefense, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
+
+export class FocusShot extends Ability{
+    constructor(){
+        super();
+        this.name = "focus shot";
+        this.type = "pierce";
+        this.speedMultiplier = 0.25;
+        this.staminaCost = 35;
+        this.magicCost = 0;
+        this.damageModifier = 16;
+        this.accuracy = 70;
+        this.soundEffect = "./audio/soundEffects/Knife-Stab-A10-www.fesliyanstudios.com.mp3";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((weilder.currentPierceAttack + this.damageModifier) - (weilder.currentPierceAttack + this.damageModifier/2) + 1)) + (weilder.currentPierceAttack + this.damageModifier/2);
+            damageOutput = this.checkDamage(damageOutput, weilder, target, target.currentPierceDefense, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
+
+export class TrueQuietRush extends Ability{
+    constructor(){
+        super();
+        this.name = "true quiet rush";
+        this.type = "pierce";
+        this.speedMultiplier = 0.25;
+        this.staminaCost = 35;
+        this.magicCost = 0;
+        this.damageModifier = 16;
+        this.accuracy = 70;
+        this.soundEffect = "./audio/soundEffects/Knife-Stab-A10-www.fesliyanstudios.com.mp3";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((weilder.currentPierceAttack + this.damageModifier) - (weilder.currentPierceAttack + this.damageModifier/2) + 1)) + (weilder.currentPierceAttack + this.damageModifier/2);
+            damageOutput = this.checkDamage(damageOutput, weilder, target, target.currentPierceDefense, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
+
+export class  TrueAirSlash extends Ability{
+    constructor(){
+        super();
+        this.name = " true air slash";
+        this.type = "pierce";
+        this.speedMultiplier = 0.25;
+        this.staminaCost = 35;
+        this.magicCost = 0;
+        this.damageModifier = 16;
+        this.accuracy = 70;
+        this.soundEffect = "./audio/soundEffects/Knife-Stab-A10-www.fesliyanstudios.com.mp3";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((weilder.currentPierceAttack + this.damageModifier) - (weilder.currentPierceAttack + this.damageModifier/2) + 1)) + (weilder.currentPierceAttack + this.damageModifier/2);
+            damageOutput = this.checkDamage(damageOutput, weilder, target, target.currentPierceDefense, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
+
+export class SwordsDance extends Ability{
+    constructor(){
+        super();
+        this.name = "swords dance";
+        this.type = "pierce";
+        this.speedMultiplier = 0.25;
+        this.staminaCost = 35;
+        this.magicCost = 0;
+        this.damageModifier = 16;
+        this.accuracy = 70;
+        this.soundEffect = "./audio/soundEffects/Knife-Stab-A10-www.fesliyanstudios.com.mp3";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((weilder.currentPierceAttack + this.damageModifier) - (weilder.currentPierceAttack + this.damageModifier/2) + 1)) + (weilder.currentPierceAttack + this.damageModifier/2);
+            damageOutput = this.checkDamage(damageOutput, weilder, target, target.currentPierceDefense, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
+
 export class Bite extends Ability{
     constructor(){
         super();
