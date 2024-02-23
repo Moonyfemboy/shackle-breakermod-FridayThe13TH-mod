@@ -123,22 +123,22 @@ export default class Controller {
         let value = document.getElementById("background-selection").value;
         switch(value){
             case "traveler":
-                this.characterCreatorUpdateStats(500, 5, 5, 5, 5, 5);
+                this.characterCreatorUpdateStats(5, 5, 5, 5, 5, 5);
                 break;
             case "blacksmith":
-                this.characterCreatorUpdateStats(7, 300, 3, 3, 5, 5);
+                this.characterCreatorUpdateStats(7, 3, 3, 3, 5, 5);
                 break;
             case "ranger":
-                this.characterCreatorUpdateStats(5, 8, 500, 5, 3, 4);
+                this.characterCreatorUpdateStats(5, 10, 5, 5, 3, 4);
                 break;
             case "scholar":
-                this.characterCreatorUpdateStats(5, 5, 3, 400, 8, 5);
+                this.characterCreatorUpdateStats(5, 5, 3, 4, 8, 5);
                 break;
             case "warrior":
-                this.characterCreatorUpdateStats(5, 5, 8, 5, 300, 4);
+                this.characterCreatorUpdateStats(5, 5, 8, 5, 3, 4);
                 break;
             case "thief":
-                this.characterCreatorUpdateStats(5, 5, 4, 8, 5, 300);
+                this.characterCreatorUpdateStats(5, 5, 4, 8, 5, 3);
                 break;
             case "hermit":
                 this.characterCreatorUpdateStats(5, 5, 3, 4, 5, 8);
