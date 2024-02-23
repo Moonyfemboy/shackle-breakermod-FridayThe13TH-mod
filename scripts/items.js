@@ -9,7 +9,7 @@ export function getRandomItem(){
                 new LeatherBoots, new KiteShield, new IronHelmet, new IronGauntlets, new IronChainmail, 
                 new IronGreaves, new IronBoots, new PanzerianGuantlets, new CrystalBall, new ClothHood, new ClothRobe, new Shortbow, new ForestStaff,
                 new HealthPotion, new StaminaPotion, new MagicPotion, 
-                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic, new PowerRing, new Katana, new Katana2, new Katana3];
+                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic, new PowerRing, new Katana, new Katana2, new Katana3, new Katana4];
                 return itemArray[Math.floor(Math.random() * itemArray.length)];
     }
 export class LinenShirt {
