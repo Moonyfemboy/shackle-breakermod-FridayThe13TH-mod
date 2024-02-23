@@ -444,6 +444,77 @@ export class Flurry extends Ability{
     }
 }
 
+export class RevolvingRavager extends Ability{
+    constructor(){
+        super();
+        this.name = "revolving ravager";
+        this.type = "pierceArcane";
+        this.speedMultiplier = 0.25;
+        this.staminaCost = 80;
+        this.magicCost = 0;
+        this.damageModifier = 25;
+        this.accuracy = 100;
+        this.soundEffect = "./audio/soundEffects/Knife-Stab-A10-www.fesliyanstudios.com.mp3";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((((weilder.currentArcaneAttack + weilder.currentPierceAttack)/2) + this.damageModifier) - ((weilder.currentArcaneAttack + weilder.currentPierceAttack)/2) + 1)) + Math.floor(((weilder.currentArcaneAttack + weilder.currentPierceAttack)/2));
+            damageOutput = this.checkDamage(damageOutput, weilder, target, (target.currentPierceDefense + target.currentArcaneDefense)/2, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
+
+export class SlayerOfGoliath extends Ability{
+    constructor(){
+        super();
+        this.name = "slayer of goliath";
+        this.type = "pierceArcane";
+        this.speedMultiplier = 0.25;
+        this.staminaCost = 80;
+        this.magicCost = 0;
+        this.damageModifier = 25;
+        this.accuracy = 100;
+        this.soundEffect = "./audio/soundEffects/Knife-Stab-A10-www.fesliyanstudios.com.mp3";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((weilder.currentPierceAttack + this.damageModifier) - (weilder.currentPierceAttack + this.damageModifier/2) + 1)) + (weilder.currentPierceAttack + this.damageModifier/2);
+            damageOutput = this.checkDamage(damageOutput, weilder, target, (target.currentPierceDefense + target.currentArcaneDefense)/2, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
 
 export class ContinuousSlashing	extends Ability{
     constructor(){
