@@ -251,7 +251,7 @@ export class Katana {
         this.imageSrc = "./media/icons/katana.png";
         this.description = `A legendarie japanese sword that can be used with 2 other swords.`;
         this.level = 1;
-        this.price = 200;
+        this.price = 300;
         this.bluntAttack = 0;
         this.pierceAttack = 6;
         this.arcaneAttack = 0;
@@ -291,7 +291,7 @@ export class Katana2 {
         this.imageSrc = "./media/icons/katana.png";
         this.description = `A legendarie japanese sword that can be held in the mouth?`;
         this.level = 1;
-        this.price = 200;
+        this.price = 300;
         this.bluntAttack = 0;
         this.pierceAttack = 6;
         this.arcaneAttack = 0;
@@ -332,7 +332,7 @@ export class Katana3 {
         this.imageSrc = "./media/icons/katana.png";
         this.description = `A legendarie japanese sword that can be used with 2 other swords.`;
         this.level = 1;
-        this.price = 200;
+        this.price = 300;
         this.bluntAttack = 0;
         this.pierceAttack = 6;
         this.arcaneAttack = 0;
@@ -371,9 +371,9 @@ export class Katana4 {
         this.name = "cursed dual katana";
         this.type = "two hand";
         this.imageSrc = "./media/icons/dualkatana.png";
-        this.description = `2 cursed swords that hold true power.`;
+        this.description = `2 swords that have been cursed with true power.`;
         this.level = 1;
-        this.price = 200;
+        this.price = 400;
         this.bluntAttack = 0;
         this.pierceAttack = 16;
         this.arcaneAttack = 0;
@@ -391,14 +391,14 @@ export class Katana4 {
             this.level = this.level + 1;
             this.price = Math.floor(this.price * 1.5);
             this.bluntAttack = this.bluntAttack + 0;
-            this.pierceAttack = this.pierceAttack + 4;
+            this.pierceAttack = this.pierceAttack + 6;
             this.arcaneAttack = this.arcaneAttack + 0;
             this.elementalAttack = this.elementalAttack + 0;
             this.bluntDefense = this.bluntDefense + 0;
             this.pierceDefense = this.pierceDefense + 0;
             this.arcaneDefense = this.arcaneDefense + 0;
             this.elementalDefense = this.elementalDefense + 0;
-            this.speed = this.speed + 1;
+            this.speed = this.speed + 3;
             this.evasion = this.evasion + 1;
         }
         if(this.level == 3){
