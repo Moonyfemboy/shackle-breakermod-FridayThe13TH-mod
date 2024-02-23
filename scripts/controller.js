@@ -182,7 +182,7 @@ export default class Controller {
                 break;
             case "ranger":
                 equippedArray.push(new Katana4, "Empty", new NightbladeHelm, new RoyalAltusRobes, "Empty", new LinenPants, new LeatherBoots);
-                this.partyGold = 250;
+                this.partyGold = 750;
                 break;
             case "scholar":
                 equippedArray.push(new ArcaneStaff, "Empty", new ClothHood, new LinenShirt, "Empty", new LinenPants, new LeatherBoots);
