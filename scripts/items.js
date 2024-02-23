@@ -1,6 +1,6 @@
 import {Slash, Strike, Stab, Flurry, Eviscerate, Block, Fireball, Meditate, Cleanse, ShieldBash, LightBeam, GuardBreak, DrinkHealthPotion, DrinkStaminaPotion, DrinkMagicPotion, ThrowKnife, ThrowPoisonedKnife, SmashMeteorite, UseAntidote, UseAloeRemedy, UseBandage,
         ThrowNet, Immolate, LightningBolt, Shockwave, Recuperate, IceShard, IceBarrier, DrainLife, Siphon, ArcaneDart, ArcaneBlast, Channel, ThrowSmokebomb, CastShadow, BlinkStrike, Empower, WildSwing, Pounce, Bite, ShootArrow, TripleShot,
-        Roar, UseFrostbiteTonic, UseParalysisTonic, MeteorShower, SummonSkeleton, ArcaneSalvo, Bless, VineLash, ThrowThistles, VortexSheild, ShootPoisonArrow, Curse, FlameLash, BolaShot, ContinuousSlashing, DragonGust, TrueQuietRush, FocusShot, SwordsDance, TrueAirSlash, RevolvingRavager, SlayerOfGoliath} from "./abilities.js"
+        Roar, UseFrostbiteTonic, UseParalysisTonic, MeteorShower, SummonSkeleton, ArcaneSalvo, Bless, VineLash, ThrowThistles, VortexSheild, ShootPoisonArrow, Curse, FlameLash, BolaShot, ContinuousSlashing, DragonGust, TrueQuietRush, FocusShot, SwordsDance, TrueAirSlash, RevolvingRavager, SlayerOfGoliath, AirSlash, DualSlash} from "./abilities.js"
 
 export function getRandomItem(){
     let itemArray = [new LinenShirt, new LinenPants, new Dagger, new BlacksmithHammer, new Spear, new Shortsword, new Longsword, new Handaxe, new NightbladeSword,
