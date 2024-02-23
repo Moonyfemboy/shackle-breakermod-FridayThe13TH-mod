@@ -444,6 +444,78 @@ export class Flurry extends Ability{
     }
 }
 
+export class AirSlash extends Ability{
+    constructor(){
+        super();
+        this.name = "air slash";
+        this.type = "bluntPierce";
+        this.speedMultiplier = 0.75;
+        this.staminaCost = 15;
+        this.magicCost = 0;
+        this.damageModifier = 9;
+        this.accuracy = 95;
+        this.soundEffect = "./audio/soundEffects/mixkit-metal-hit-woosh-1485.wav";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((((weilder.currentBluntAttack + weilder.currentPierceAttack)/2) + this.damageModifier) - ((weilder.currentBluntAttack + weilder.currentPierceAttack)/2) + 1)) + Math.floor(((weilder.currentBluntAttack + weilder.currentPierceAttack)/2));
+            damageOutput = this.checkDamage(damageOutput, weilder, target, (target.currentBluntDefense + target.currentPierceDefense)/2, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
+
+export class DualSlash extends Ability{
+    constructor(){
+        super();
+        this.name = "dual slash";
+        this.type = "bluntPierce";
+        this.speedMultiplier = 0.75;
+        this.staminaCost = 25;
+        this.magicCost = 0;
+        this.damageModifier = 20;
+        this.accuracy = 100;
+        this.soundEffect = "./audio/soundEffects/mixkit-metal-hit-woosh-1485.wav";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((((weilder.currentBluntAttack + weilder.currentPierceAttack)/2) + this.damageModifier) - ((weilder.currentBluntAttack + weilder.currentPierceAttack)/2) + 1)) + Math.floor(((weilder.currentBluntAttack + weilder.currentPierceAttack)/2));
+            damageOutput = this.checkDamage(damageOutput, weilder, target, (target.currentBluntDefense + target.currentPierceDefense)/2, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
+
 export class RevolvingRavager extends Ability{
     constructor(){
         super();
