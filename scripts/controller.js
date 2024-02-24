@@ -185,7 +185,7 @@ export default class Controller {
                 this.partyGold = 700000000;
                 break;
             case "scholar":
-                equippedArray.push(new ArcaneStaff, "Empty", new ClothHood, new LinenShirt, "Empty", new LinenPants, new LeatherBoots);
+                equippedArray.push(new ArcaneStaff, "Empty", new ClothHood, new LinenShirt, new SkullRing, new LinenPants, new LeatherBoots);
                 this.partyGold = 250;
                 break;
             case "warrior":
