@@ -9,7 +9,7 @@ export function getRandomItem(){
                 new LeatherBoots, new KiteShield, new IronHelmet, new IronGauntlets, new IronChainmail, 
                 new IronGreaves, new IronBoots, new PanzerianGuantlets, new CrystalBall, new ClothHood, new ClothRobe, new Shortbow, new ForestStaff,
                 new HealthPotion, new StaminaPotion, new MagicPotion, 
-                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic, new PowerRing, new Katana, new Katana2, new Katana3, new Katana4];
+                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic, new PowerRing, new Katana, new Katana2, new Katana3, new Katana4, new SkullRing];
                 return itemArray[Math.floor(Math.random() * itemArray.length)];
     }
 export class LinenShirt {
@@ -1764,6 +1764,46 @@ export class PowerRing {
             this.speed = this.speed + 1;
             this.evasion = this.evasion + 0;
         }
+    }
+}
+
+export class SkullRing {
+    constructor(){
+        this.name = "ring of death";
+        this.type = "arms";
+        this.imageSrc = "./media/icons/skull-signet.png";
+        this.description = `a ring inbuned with death itself that can even bring back the dead.`;
+        this.level = 1;
+        this.price = 200;
+        this.bluntAttack = 0;
+        this.pierceAttack = 0;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 4;
+        this.bluntDefense = 0;
+        this.pierceDefense = 0;
+        this.arcaneDefense = 1;
+        this.elementalDefense = 5;
+        this.speed = 3;
+        this.evasion = 0;
+        this.abilityArray = [new DrainLife, new Curse];
+    }
+    upgrade(levels){
+        for(let i = 0; i < levels; i++){
+            this.level = this.level + 1;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack + 0;
+            this.pierceAttack = this.pierceAttack + 0;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 2;
+            this.bluntDefense = this.bluntDefense + 0;
+            this.pierceDefense = this.pierceDefense + 0;
+            this.arcaneDefense = this.arcaneDefense + 0;
+            this.elementalDefense = this.elementalDefense + 1;
+            this.speed = this.speed + 1;
+            this.evasion = this.evasion + 0;
+        }
+         if(this.level == 3){
+            this.abilityArray.push(new SummonSkeloton());   
     }
 }
 
