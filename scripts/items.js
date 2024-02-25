@@ -1804,7 +1804,7 @@ export class SkullRing {
         }
          if(this.level == 3){
             this.abilityArray.push(new SummonSkeloton());   
-                 {
+         }
     }
 }
 
