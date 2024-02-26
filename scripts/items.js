@@ -102,7 +102,7 @@ export class Dagger {
         this.pierceDefense = 0;
         this.arcaneDefense = 0;
         this.elementalDefense = 0;
-        this.speed = 1;
+        this.speed = 10;
         this.evasion = 1;
         this.abilityArray = [new Stab(), new Slash()];
     }
