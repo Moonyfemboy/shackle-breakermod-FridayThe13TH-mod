@@ -1949,8 +1949,8 @@ export class AloeRemedy {
     constructor(){
         this.name = "fire extinguisher";
         this.type = "consumable";
-        this.imageSrc = "./media/icons/fire-extinguishe.png";
-        this.description = `a fire extinguishe to put out your burrning self.`;
+        this.imageSrc = "./media/icons/fire-extinguisher.png";
+        this.description = `a fire extinguisher to put out your burrning self.`;
         this.level = 1;
         this.price = 30;
         this.abilityArray = [new UseAloeRemedy()];
