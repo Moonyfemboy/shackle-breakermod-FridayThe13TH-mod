@@ -198,7 +198,7 @@ export default class Controller {
                 break;
             case "hermit":
                 equippedArray.push(new FireStaff, "Empty", new ClothHood, new LinenShirt, "Empty",  new LinenPants, new LeatherBoots);
-                this.partyGold = 250;
+                this.partyGold = 50000;
                 break;
         }
         let value2 = document.getElementById("keepsake-selection").value;
