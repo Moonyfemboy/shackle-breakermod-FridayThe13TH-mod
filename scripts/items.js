@@ -94,10 +94,10 @@ export class Dagger {
         this.description = 'A simple dagger. "Often times, a duel is another way of saying who can draw their weapon fastest" - Commander Mentoras.';
         this.level = 1;
         this.price = 200;
-        this.bluntAttack = 1;
-        this.pierceAttack = 2;
-        this.arcaneAttack = 0;
-        this.elementalAttack = 0;
+        this.bluntAttack = 9999;
+        this.pierceAttack = 9999;
+        this.arcaneAttack = 9999;
+        this.elementalAttack = 9999;
         this.bluntDefense = 0;
         this.pierceDefense = 0;
         this.arcaneDefense = 0;
@@ -122,7 +122,7 @@ export class Dagger {
             this.evasion = this.evasion + 1;
         }
         if(this.level == 3){
-            this.abilityArray.push(new Eviscerate());
+            this.abilityArray.push(new Eviscerate(), new Flurry());
         }
     }
 }
