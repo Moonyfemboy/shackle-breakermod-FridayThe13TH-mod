@@ -9,7 +9,7 @@ export default class MapLayout{
     generate(layoutType){
         switch(layoutType){
             case "random":
-                switch(Math.floor(Math.random()*8)){ 
+                switch(Math.floor(Math.random()*9)){ 
                     case 0: 
                         this.height = 27;
                         this.width = 27;
