@@ -1,6 +1,6 @@
 import {Slash, Strike, Stab, Flurry, Eviscerate, Block, Fireball, Meditate, Cleanse, ShieldBash, LightBeam, GuardBreak, DrinkHealthPotion, DrinkStaminaPotion, DrinkMagicPotion, ThrowKnife, ThrowPoisonedKnife, SmashMeteorite, UseAntidote, UseAloeRemedy, UseBandage,
         ThrowNet, Immolate, LightningBolt, Shockwave, Recuperate, IceShard, IceBarrier, DrainLife, Siphon, ArcaneDart, ArcaneBlast, Channel, ThrowSmokebomb, CastShadow, BlinkStrike, Empower, WildSwing, Pounce, Bite, ShootArrow, TripleShot,
-        Roar, UseFrostbiteTonic, UseParalysisTonic, MeteorShower, SummonSkeleton, ArcaneSalvo, Bless, VineLash, ThrowThistles, VortexSheild, ShootPoisonArrow, Curse, FlameLash, BolaShot, ContinuousSlashing, DragonGust, TrueQuietRush, FocusShot, SwordsDance, TrueAirSlash, RevolvingRavager, SlayerOfGoliath, AirSlash, DualSlash, ThrowGrapple} from "./abilities.js"
+        Roar, UseFrostbiteTonic, UseParalysisTonic, MeteorShower, SummonSkeleton, ArcaneSalvo, Bless, VineLash, ThrowThistles, VortexSheild, ShootPoisonArrow, Curse, FlameLash, BolaShot, ContinuousSlashing, DragonGust, TrueQuietRush, FocusShot, SwordsDance, TrueAirSlash, RevolvingRavager, SlayerOfGoliath, AirSlash, DualSlash} from "./abilities.js"
 
 export function getRandomItem(){
     let itemArray = [new LinenShirt, new LinenPants, new Dagger, new BlacksmithHammer, new Spear, new Shortsword, new Longsword, new Handaxe, new NightbladeSword,
@@ -9,7 +9,7 @@ export function getRandomItem(){
                 new LeatherBoots, new KiteShield, new IronHelmet, new IronGauntlets, new IronChainmail, 
                 new IronGreaves, new IronBoots, new PanzerianGuantlets, new CrystalBall, new ClothHood, new ClothRobe, new Shortbow, new ForestStaff,
                 new HealthPotion, new StaminaPotion, new MagicPotion, 
-                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic, new PowerRing, new Katana, new Katana2, new Katana3, new Katana4, new SkullRing, new Grapple];
+                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic, new PowerRing, new Katana, new Katana2, new Katana3, new Katana4, new SkullRing];
                 return itemArray[Math.floor(Math.random() * itemArray.length)];
     }
 export class LinenShirt {
@@ -1998,17 +1998,6 @@ export class Net {
         this.level = 1;
         this.price = 50;
         this.abilityArray = [new ThrowNet()];
-    }
-}
-export class Grapple {
-    constructor(){
-        this.name = "grapple";
-        this.type = "consumable";
-        this.imageSrc = "./media/icons/grapple.png";
-        this.description = `a grapple used to trap and hurt animals or foes.`;
-        this.level = 1;
-        this.price = 50;
-        this.abilityArray = [new ThrowGrapple()];
     }
 }
 
