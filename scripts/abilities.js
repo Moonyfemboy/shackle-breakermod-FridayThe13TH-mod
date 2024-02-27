@@ -2347,6 +2347,36 @@ export class DrinkMagicPotion extends Ability{
         }
     }
 }
+
+export class ThrowChain extends Ability{
+    constructor(){
+        super();
+        this.name = "GET OVER HERE";
+        this.type = "pierce";
+        this.speedMultiplier = 1.0;
+        this.staminaCost = 15;
+        this.magicCost = 0;
+        this.damageModifier = 10;
+        this.accuracy = 80;
+        this.soundEffect = "./audio/soundEffects/arrow-body-impact-146419.mp3";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            let damageOutput = Math.floor(Math.random() * ((weilder.currentPierceAttack + this.damageModifier) - weilder.currentPierceAttack + 1)) + weilder.currentPierceAttack;
+            damageOutput = this.checkDamage(damageOutput, weilder, target, target.currentPierceDefense, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} says ${this.name} at ${target.name} and throws a spear at them for ${damageOutput} damage!`);
+            theController.playSoundEffect(this.soundEffect);
+        }
+    }
+    canUse(weilder){
+        if(theController.isInBattle == false){
+            theController.printToGameConsole("cannot use outside of combat.");
+            return false;
+        }
+    }
+}
+
 export class ThrowKnife extends Ability{
     constructor(){
         super();
