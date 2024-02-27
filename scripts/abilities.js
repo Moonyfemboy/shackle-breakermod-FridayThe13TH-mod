@@ -2360,7 +2360,7 @@ export class ThrowChain extends Ability{
         this.accuracy = 80;
         this.soundEffect = "./audio/soundEffects/arrow-body-impact-146419.mp3";
     }
-}
+
     activate(weilder, target){
         if(this.checkStamina(weilder) == true){
             let damageOutput = Math.floor(Math.random() * ((weilder.currentPierceAttack + this.damageModifier) - weilder.currentPierceAttack + 1)) + weilder.currentPierceAttack;
@@ -2375,6 +2375,8 @@ export class ThrowChain extends Ability{
                         return;
                     }
                 }
+            }
+            
                 target.statusArray.push(new Burned(target));
                 theController.printToGameConsole(`${target.name} is now on fire!`);
             }
