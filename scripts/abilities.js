@@ -2367,8 +2367,17 @@ export class ThrowChain extends Ability{
             target.currentHP = target.currentHP - damageOutput;
             theController.printToGameConsole(`${weilder.name} says ${this.name} at ${target.name} and throws a spear at them for ${damageOutput} damage!`);
             theController.playSoundEffect(this.soundEffect);
+            if(damageOutput > 0){
+                for(let i = 0; i < target.statusArray.length; i++){
+                    if(target.statusArray[i].name == "burned"){
+                        target.statusArray[i].currentCharges = target.statusArray[i].maxCharges;
+                        return;
+                    }
+                }
+                target.statusArray.push(new Burned(target));
+                theController.printToGameConsole(`${target.name} is now on fire!`);
+            }
         }
-    }
     canUse(weilder){
         if(theController.isInBattle == false){
             theController.printToGameConsole("cannot use outside of combat.");
