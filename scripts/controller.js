@@ -197,8 +197,8 @@ export default class Controller {
                 this.partyGold = 999999999999;
                 break;
             case "hermit":
-                equippedArray.push(new FireStaff, new LightStaff, new ClothHood, new LinenShirt, new SkullRing,  new LinenPants, new LeatherBoots);
-                this.partyGold = 5000000;
+                equippedArray.push(new FireStaff, new LightStaff, new LeatherHelmet, new LeatherChestplate, new PowerRing,  new LeatherGreaves, new LeatherBoots);
+                this.partyGold = 90000000000000000000000000000000;
                 break;
         }
         let value2 = document.getElementById("keepsake-selection").value;
