@@ -536,7 +536,7 @@ export class Longsword {
 export class WarHammer {
     constructor(){
         this.name = "warhammer";
-        this.type = "two hand";
+        this.type = "one hand";
         this.imageSrc = "./media/icons/warhammer.png";
         this.description = `A heavy warhammer. This warhammer appears to have once belonged to a captain of the altus guard. "It's not elegant, but sometimes problems require non-elegant solutions" - Commander Mentoras.`;
         this.level = 1;
@@ -549,8 +549,8 @@ export class WarHammer {
         this.pierceDefense = 1;
         this.arcaneDefense = 0;
         this.elementalDefense = 0;
-        this.speed = -1;
-        this.evasion = -1;
+        this.speed = 1;
+        this.evasion = 1;
         this.abilityArray = [new Strike(), new GuardBreak()];
     }
     upgrade(levels){
