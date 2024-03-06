@@ -197,8 +197,8 @@ export default class Controller {
                 this.partyGold = 999999999999;
                 break;
             case "hermit":
-                equippedArray.push(new FireStaff, "Empty", new ClothHood, new LinenShirt, "Empty",  new LinenPants, new LeatherBoots);
-                this.partyGold = 50000;
+                equippedArray.push(new FireStaff, new LightStaff, new ClothHood, new LinenShirt, "Empty",  new LinenPants, new LeatherBoots);
+                this.partyGold = 5000000;
                 break;
         }
         let value2 = document.getElementById("keepsake-selection").value;
@@ -212,7 +212,7 @@ export default class Controller {
                 inventoryArray.push(new HealthPotion, new StaminaPotion , new MagicPotion);
                 break;
             case "meteorite":
-                inventoryArray.push(new Meteorite);
+                inventoryArray.push(new Meteorite, new Meteorite, new Meteorite, new Meteorite, new Meteorite, new Meteorite, new Meteorite, new Meteorite, new Meteorite, new Meteorite, new Meteorite, new WarHammer);
                 break;
             case "herbal-medicine":
                 inventoryArray.push(new HealthPotion, new Antidote, new AloeRemedy);
