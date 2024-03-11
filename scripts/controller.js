@@ -197,7 +197,7 @@ export default class Controller {
                 this.partyGold = 999999999999;
                 break;
             case "hermit":
-                equippedArray.push(new FireStaff, new LightStaff, new LeatherHelmet, new LeatherChestplate, new PowerRing,  new LeatherGreaves, new LeatherBoots);
+                equippedArray.push(new Chain, "Empty", new RoyalAltusRobes, new LeatherChestplate, new PowerRing,  new LeatherGreaves, new LeatherBoots);
                 this.partyGold = 90000000000000000000000000000000;
                 break;
         }
