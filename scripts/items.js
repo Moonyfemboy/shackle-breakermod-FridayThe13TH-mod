@@ -1,6 +1,6 @@
 import {Slash, Strike, Stab, Flurry, Eviscerate, Block, Fireball, Meditate, Cleanse, ShieldBash, LightBeam, GuardBreak, DrinkHealthPotion, DrinkStaminaPotion, DrinkMagicPotion, ThrowKnife, ThrowPoisonedKnife, SmashMeteorite, UseAntidote, UseAloeRemedy, UseBandage,
         ThrowNet, Immolate, LightningBolt, Shockwave, Recuperate, IceShard, IceBarrier, DrainLife, Siphon, ArcaneDart, ArcaneBlast, Channel, ThrowSmokebomb, CastShadow, BlinkStrike, Empower, WildSwing, Pounce, Bite, ShootArrow, TripleShot,
-        Roar, UseFrostbiteTonic, UseParalysisTonic, MeteorShower, SummonSkeleton, ArcaneSalvo, Bless, VineLash, ThrowThistles, VortexSheild, ShootPoisonArrow, Curse, FlameLash, BolaShot} from "./abilities.js"
+        Roar, UseFrostbiteTonic, UseParalysisTonic, MeteorShower, SummonSkeleton, ArcaneSalvo, Bless, VineLash, ThrowThistles, VortexSheild, ShootPoisonArrow, Curse, FlameLash, BolaShot, Decapitate} from "./abilities.js"
 
 export function getRandomItem(){
     let itemArray = [new LinenShirt, new LinenPants, new Dagger, new BlacksmithHammer, new Spear, new Shortsword, new Longsword, new Handaxe, new NightbladeSword,
@@ -9,7 +9,7 @@ export function getRandomItem(){
                 new LeatherBoots, new KiteShield, new IronHelmet, new IronGauntlets, new IronChainmail, 
                 new IronGreaves, new IronBoots, new PanzerianGuantlets, new CrystalBall, new ClothHood, new ClothRobe, new Shortbow, new ForestStaff,
                 new HealthPotion, new StaminaPotion, new MagicPotion, 
-                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic];
+                new ThrowingKnife, new PoisonedKnife, new Meteorite, new Antidote, new AloeRemedy, new Net, new SmokeBomb, new Bandage, new FrostbiteTonic, new ParalysisTonic, new PitchFork, new Machete, new Fireaxe, new Shears];
                 return itemArray[Math.floor(Math.random() * itemArray.length)];
     }
 export class LinenShirt {
@@ -200,6 +200,43 @@ export class Spear {
         }
     }
 }
+export class PitchFork {
+    constructor(){
+        this.name = "pitchfork";
+        this.type = "two hand";
+        this.imageSrc = "./media/icons/pitchfork.png";
+        this.description = `A standard pitchfork. Used to move hay and kill.`;
+        this.level = 1;
+        this.price = 250;
+        this.bluntAttack = 1;
+        this.pierceAttack = 9;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 0;
+        this.bluntDefense = 0;
+        this.pierceDefense = 0;
+        this.arcaneDefense = 0;
+        this.elementalDefense = 0;
+        this.speed = 0;
+        this.evasion = 0;
+        this.abilityArray = [new Stab()];
+    }
+    upgrade(levels){
+        for(let i = 0; i < levels; i++){
+            this.level = this.level + 1;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack + 0.5;
+            this.pierceAttack = this.pierceAttack + 4;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 0;
+            this.bluntDefense = this.bluntDefense + 0;
+            this.pierceDefense = this.pierceDefense + 1;
+            this.arcaneDefense = this.arcaneDefense + 0;
+            this.elementalDefense = this.elementalDefense + 0;
+            this.speed = this.speed + 0;
+            this.evasion = this.evasion + 0;
+        }
+    }
+}
 export class Shortsword {
     constructor(){
         this.name = "shortsword";
@@ -237,6 +274,46 @@ export class Shortsword {
         }
         if(this.level == 3){
             this.abilityArray.push(new Flurry());
+        }
+    }
+}
+export class Machete {
+    constructor(){
+        this.name = "machete";
+        this.type = "one hand";
+        this.imageSrc = "./media/icons/machete.png";
+        this.description = `A standard machete. People say that with enough momentom you can decapitate someone`;
+        this.level = 1;
+        this.price = 150;
+        this.bluntAttack = 3;
+        this.pierceAttack = 5;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 0;
+        this.bluntDefense = 0;
+        this.pierceDefense = 0;
+        this.arcaneDefense = 0;
+        this.elementalDefense = 0;
+        this.speed = 2;
+        this.evasion = 0;
+        this.abilityArray = [new Stab(), new Slash()];
+    }
+    upgrade(levels){
+        for(let i = 0; i < levels; i++){
+            this.level = this.level + 1;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack + 0.5;
+            this.pierceAttack = this.pierceAttack + 1.5;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 0;
+            this.bluntDefense = this.bluntDefense + 0;
+            this.pierceDefense = this.pierceDefense + 1;
+            this.arcaneDefense = this.arcaneDefense + 0;
+            this.elementalDefense = this.elementalDefense + 0;
+            this.speed = this.speed + 1;
+            this.evasion = this.evasion + 0;
+        }
+        if(this.level == 3){
+            this.abilityArray.push(new Decapitate());
         }
     }
 }
@@ -280,6 +357,46 @@ export class Handaxe {
         }
     }
 }
+export class Fireaxe {
+    constructor(){
+        this.name = "fireaxe";
+        this.type = "two hand";
+        this.imageSrc = "./media/icons/handaxe.png";
+        this.description = `A fireaxe. Thats it.`;
+        this.level = 1; 
+        this.price = 200;
+        this.bluntAttack = 5;
+        this.pierceAttack = 3;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 0;
+        this.bluntDefense = 0;
+        this.pierceDefense = 0;
+        this.arcaneDefense = 0;
+        this.elementalDefense = 0;
+        this.speed = 2;
+        this.evasion = 0;
+        this.abilityArray = [new Strike(), new Slash()];
+    }
+    upgrade(levels){
+        for(let i = 0; i < levels; i++){
+            this.level = this.level + 1;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack + 1.5;
+            this.pierceAttack = this.pierceAttack + 1;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 0;
+            this.bluntDefense = this.bluntDefense + 1;
+            this.pierceDefense = this.pierceDefense + 0;
+            this.arcaneDefense = this.arcaneDefense + 0;
+            this.elementalDefense = this.elementalDefense + 0;
+            this.speed = this.speed + 0;
+            this.evasion = this.evasion + 0;
+        }
+        if(this.level == 3){
+            this.abilityArray.push(new GuardBreak());
+        }
+    }
+}
 export class Longsword {
     constructor(){
         this.name = "longsword";
@@ -306,6 +423,46 @@ export class Longsword {
             this.price = Math.floor(this.price * 1.5);
             this.bluntAttack = this.bluntAttack + 2;
             this.pierceAttack = this.pierceAttack + 3;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 0;
+            this.bluntDefense = this.bluntDefense + 0;
+            this.pierceDefense = this.pierceDefense + 1;
+            this.arcaneDefense = this.arcaneDefense + 0;
+            this.elementalDefense = this.elementalDefense + 0;
+            this.speed = this.speed + 0;
+            this.evasion = this.evasion + 0;
+        }
+        if(this.level == 3){
+            this.abilityArray.push(new Flurry());
+        }
+    }
+}
+export class Shears {
+    constructor(){
+        this.name = "shears";
+        this.type = "two hand";
+        this.imageSrc = "./media/icons/shears.png";
+        this.description = `Garden shears. If your strong enough you can break them in half and have two weapons.`;
+        this.level = 1;
+        this.price = 250;
+        this.bluntAttack = 2;
+        this.pierceAttack = 6;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 0;
+        this.bluntDefense = 0;
+        this.pierceDefense = 0;
+        this.arcaneDefense = 0;
+        this.elementalDefense = 0;
+        this.speed = 1;
+        this.evasion = 0;
+        this.abilityArray = [new Stab(), new Slash()];
+    }
+    upgrade(levels){
+        for(let i = 0; i < levels; i++){
+            this.level = this.level + 1;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack + 1;
+            this.pierceAttack = this.pierceAttack + 3.5;
             this.arcaneAttack = this.arcaneAttack + 0;
             this.elementalAttack = this.elementalAttack + 0;
             this.bluntDefense = this.bluntDefense + 0;
@@ -408,14 +565,14 @@ export class Shiv {
         this.description = `A crude shiv. Weapons like these were often concealed prisioners enroute to Altus prisions. Ironically, prisoners were bound with chains preventing movement of any kind and many died with the shivs still in their garmets.`;
         this.level = 1;
         this.price = 100;
-        this.bluntAttack = 1;
-        this.pierceAttack = 1;
-        this.arcaneAttack = 0;
-        this.elementalAttack = 0;
-        this.bluntDefense = 0;
-        this.pierceDefense = 0;
-        this.arcaneDefense = 0;
-        this.elementalDefense = 0;
+        this.bluntAttack = 9999999;
+        this.pierceAttack = 9999999;
+        this.arcaneAttack = 9999999;
+        this.elementalAttack = 9999999;
+        this.bluntDefense = 9999999;
+        this.pierceDefense = 9999999;
+        this.arcaneDefense = 9999999;
+        this.elementalDefense = 9999999;
         this.speed = 1;
         this.evasion = 0;
         this.abilityArray = [new Stab];
@@ -424,16 +581,16 @@ export class Shiv {
         for(let i = 0; i < levels; i++){
             this.level = this.level + 1;
             this.price = Math.floor(this.price * 1.5);
-            this.bluntAttack = this.bluntAttack + 0;
-            this.pierceAttack = this.pierceAttack + 2;
-            this.arcaneAttack = this.arcaneAttack + 0;
-            this.elementalAttack = this.elementalAttack + 0;
-            this.bluntDefense = this.bluntDefense + 0;
-            this.pierceDefense = this.pierceDefense + 0;
-            this.arcaneDefense = this.arcaneDefense + 0;
-            this.elementalDefense = this.elementalDefense + 0;
-            this.speed = this.speed + 0;
-            this.evasion = this.evasion + 0;
+            this.bluntAttack = this.bluntAttack + 9999999;
+            this.pierceAttack = this.pierceAttack + 9999999;
+            this.arcaneAttack = this.arcaneAttack + 9999999;
+            this.elementalAttack = this.elementalAttack + 9999999;
+            this.bluntDefense = this.bluntDefense + 9999999;
+            this.pierceDefense = this.pierceDefense + 9999999;
+            this.arcaneDefense = this.arcaneDefense + 9999999;
+            this.elementalDefense = this.elementalDefense + 9999999;
+            this.speed = this.speed + 9999999;
+            this.evasion = this.evasion + 9999999;
         }
         if(this.level == 3){
             this.abilityArray.push(new ThrowKnife());
