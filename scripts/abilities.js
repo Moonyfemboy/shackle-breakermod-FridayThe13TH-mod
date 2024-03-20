@@ -313,6 +313,41 @@ export class Slash extends Ability{
         }
     }
 }
+export class Decapitate extends Ability{
+    constructor(){
+        super();
+        this.name = "decapitate";
+        this.type = "bluntPierce";
+        this.speedMultiplier = 0;
+        this.staminaCost = 30;
+        this.magicCost = 0;
+        this.damageModifier = 9999999;
+        this.accuracy = 10;
+        this.soundEffect = "./audio/soundEffects/mixkit-metal-hit-woosh-1485.wav";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((((weilder.currentBluntAttack + weilder.currentPierceAttack)/2) + this.damageModifier) - ((weilder.currentBluntAttack + weilder.currentPierceAttack)/2) + 1)) + Math.floor(((weilder.currentBluntAttack + weilder.currentPierceAttack)/2));
+            damageOutput = this.checkDamage(damageOutput, weilder, target, (target.currentBluntDefense + target.currentPierceDefense)/2, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${target.name} has been ${this.name} by ${weilder.name} for ${damageOutput} damage!`);
+            if(damageOutput > 0){
+                if(Math.random()*10 < 1){
+                    for(let i = 0; i < target.statusArray.length; i++){
+                        if(target.statusArray[i].name == "bleeding"){
+                            return;
+                        }
+                    }
+                    target.statusArray.push(new Bleeding(target));
+                } 
+            }
+        }
+    }
+}
 export class GuardBreak extends Ability{
     constructor(){
         super();
