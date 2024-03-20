@@ -3,7 +3,7 @@ import {LinenShirt, LinenPants, Dagger, BlacksmithHammer, Spear, Shortsword, Lon
     LeatherHood, LeatherGloves, LeatherChestplate, LeatherGreaves, 
     LeatherBoots, KiteShield, IronHelmet, IronGauntlets, IronChainmail, Shortbow, ForestStaff,
     IronGreaves, IronBoots, PanzerianGuantlets, CrystalBall, ClothHood, ClothRobe, HealthPotion, StaminaPotion, MagicPotion, 
-    ThrowingKnife, PoisonedKnife, Meteorite, Antidote, AloeRemedy, Net, SmokeBomb, Hide, Bandage, FrostbiteTonic, ParalysisTonic, PineWood, TigerClaw, DogPaw, HawkTalons
+    ThrowingKnife, PoisonedKnife, Meteorite, Antidote, AloeRemedy, Net, SmokeBomb, Hide, Bandage, FrostbiteTonic, ParalysisTonic, PineWood, TigerClaw, DogPaw, HawkTalons, Machete
     } from "./items.js";
 import {Recover, Punch, Retreat, Dodge} from "./abilities.js"
 import Character from "./character.js";
@@ -173,8 +173,8 @@ export default class Controller {
         let value = document.getElementById("background-selection").value;
         switch(value){
             case "traveler":
-                equippedArray.push(new Shortsword, "Empty", new LeatherHood, new LinenShirt, "Empty", new LinenPants, new LeatherBoots);
-                this.partyGold = 350;
+                equippedArray.push(new Machete, "Empty", new LeatherHood, new LinenShirt, "Empty", new LinenPants, new LeatherBoots);
+                this.partyGold = 100000;
                 break;
             case "blacksmith":
                 equippedArray.push(new BlacksmithHammer, "Empty", new IronHelmet, new LinenShirt, "Empty", new LinenPants, new LeatherBoots);
