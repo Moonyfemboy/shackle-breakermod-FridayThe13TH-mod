@@ -517,6 +517,46 @@ export class WarHammer {
         }
     }
 }
+export class Chainsaw {
+    constructor(){
+        this.name = "chainsaw";
+        this.type = "two hand";
+        this.imageSrc = "./media/icons/chainsaw.png";
+        this.description = `A chainsaw. VROOM VROOM`;
+        this.level = 1;
+        this.price = 400;
+        this.bluntAttack = 2;
+        this.pierceAttack = 9;
+        this.arcaneAttack = 0;
+        this.elementalAttack = 0;
+        this.bluntDefense = 1;
+        this.pierceDefense = 1;
+        this.arcaneDefense = 0;
+        this.elementalDefense = 0;
+        this.speed = 1;
+        this.evasion = 1;
+        this.abilityArray = [new Strike(), new GuardBreak()];
+    }
+    upgrade(levels){
+        for(let i = 0; i < levels; i++){
+            this.level = this.level + 1;
+            this.price = Math.floor(this.price * 1.5);
+            this.bluntAttack = this.bluntAttack + 1;
+            this.pierceAttack = this.pierceAttack + 3;
+            this.arcaneAttack = this.arcaneAttack + 0;
+            this.elementalAttack = this.elementalAttack + 0;
+            this.bluntDefense = this.bluntDefense + 2;
+            this.pierceDefense = this.pierceDefense + 1;
+            this.arcaneDefense = this.arcaneDefense + 1;
+            this.elementalDefense = this.elementalDefense + 1;
+            this.speed = this.speed + 1;
+            this.evasion = this.evasion + 0;
+        }
+        if(this.level == 3){
+            this.abilityArray.push(new WildSwing());
+        }
+    }
+}
 export class Shortbow {
     constructor(){
         this.name = "shortbow";
