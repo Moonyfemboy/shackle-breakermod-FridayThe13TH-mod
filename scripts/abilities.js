@@ -408,6 +408,31 @@ export class Strike extends Ability{
         }
     }
 }
+export class Headbutt extends Ability{
+    constructor(){
+        super();
+        this.name = "headbutt";
+        this.type = "blunt";
+        this.speedMultiplier = 0.75;
+        this.staminaCost = 20;
+        this.magicCost = 0;
+        this.damageModifier = 50;
+        this.accuracy = 50;
+        this.soundEffect = "./audio/soundEffects/mixkit-metallic-sword-strike-2160.wav";
+    }
+    activate(weilder, target){
+        if(this.checkStamina(weilder) == true){
+            theController.playSoundEffect(this.soundEffect);
+            if(this.checkMiss(weilder, target, this.name) == true){
+                return;
+            }
+            let damageOutput = Math.floor(Math.random() * ((weilder.currentBluntAttack + this.damageModifier) - weilder.currentBluntAttack + 1)) + weilder.currentBluntAttack;
+            damageOutput = this.checkDamage(damageOutput, weilder, target, target.currentBluntDefense, "health");
+            target.currentHP = target.currentHP - damageOutput;
+            theController.printToGameConsole(`${weilder.name} uses ${this.name} against ${target.name} for ${damageOutput} damage!`);
+        }
+    }
+}
 export class Stab extends Ability{
     constructor(){
         super();
